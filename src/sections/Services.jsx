@@ -11,7 +11,8 @@ const services = [
         overline: "EMERGENCY COVERAGE",
         title: "Deal Saver",
         subtitle: "For occasional insurance emergencies and difficult customers",
-        description: "Get immediate state-approved coverage when traditional agents fail. Perfect for weekend deliveries, bad driving record customers, and emergency situations. Two-minute policy issuance through our mobile app with full liability protection for your dealership.",
+        subtitleColor: "#cd7f32",
+        description: "Get immediate state-approved coverage when traditional agents fail. Perfect for weekend deliveries, bad driving record customers, and emergency situations. Two-minute policy issuance through our website, no monthly minimum.",
         bestFor: "Dealerships handling 5-10 difficult insurance situations per month"
     },
     {
@@ -19,8 +20,9 @@ const services = [
         overline: "FULL PROTECTION",
         title: "Revenue Accelerator",
         subtitle: "For high-volume stores that can't afford to lose deals",
-        description: "Complete insurance solution covering all scenarios that kill deals. Bad credit, DUIs, first-time buyers, permissive use policies, agent unavailability, and emergency situations. Includes spot delivery protection and funding facilitation to lock in profits immediately.",
-        bestFor: "High-volume dealerships selling 200+ cars monthly who understand that 10 extra deals per month generates $23,000 additional profit",
+        subtitleColor: "#a8a9ad",
+        description: "Complete insurance solution covering all scenarios that kill deals. Permissive-use policy covering the vehicle regardless of the driver. First-time buyers. Customers with an international or out-of-state license. Includes spot delivery protection and facilitation to lock in dealer profits immediately.",
+        bestFor: "High-volume dealerships selling 200+ cars per month who understand that 10 extra deals on average will generate at least $23,000 in additional gross profits.",
         featured: true
     },
     {
@@ -28,6 +30,7 @@ const services = [
         overline: "ENTERPRISE SOLUTION",
         title: "Dealer Group Mastery",
         subtitle: "For multi-location operations and dealer groups",
+        subtitleColor: "#d4af37",
         description: "Comprehensive coverage across multiple locations with dedicated support, custom implementation, and priority service. Includes training for all managers, quarterly account reviews, and direct access to our team for immediate support during high-volume periods.",
         bestFor: "Dealer groups with 10+ locations looking for a lifestyle-changing competitive advantage"
     }
@@ -110,7 +113,7 @@ export default function Services() {
                                 {service.title}
                             </h3>
 
-                            <p className="text-base font-medium text-accent mb-6">
+                            <p className="text-base font-medium mb-6" style={{ color: service.subtitleColor }}>
                                 {service.subtitle}
                             </p>
 

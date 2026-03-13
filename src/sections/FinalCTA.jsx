@@ -59,7 +59,7 @@ export default function FinalCTA() {
 
                     <p className="flex items-center justify-center gap-2 text-surface/60 font-medium text-sm">
                         <span className="w-1.5 h-1.5 rounded-full bg-success"></span>
-                        No dealer agreements required, setup takes two minutes
+                        24-hour dealer setup, no dealer agreements required
                     </p>
                 </div>
             </div>

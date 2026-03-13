@@ -44,7 +44,7 @@ export default function WhoWeWorkWith() {
 
                 <div className="space-y-6 text-lg font-body leading-[1.7] text-surface/80 max-w-4xl">
                     <p className="who-we-work-with-content">
-                        Our ideal partners are General Managers, Sales Managers, and Finance Managers at Toyota, Nissan, Kia, Hyundai, Chevy, Ford, and Mitsubishi dealerships selling 200+ cars per month. You operate in major metropolitan markets where customers want to buy cars around the clock, but traditional insurance agents keep banker's hours.
+                        We welcome with open arms ALL New Car Dealerships and every Brand. Our dealer-only program is currently available in 34 states. Our ideal partners are dealerships selling over 100+ cars per month. Top Brands are Toyota, Nissan, Kia, Hyundai, CDJR, Chevy, and Mitsubishi. Especially if you operate in a major metropolitan market where customers want to buy cars around the clock, but traditional insurance agents keep banker hours.
                     </p>
 
                     <p className="who-we-work-with-content">

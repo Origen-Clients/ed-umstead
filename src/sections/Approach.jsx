@@ -60,11 +60,11 @@ export default function Approach() {
 
                         <div className="space-y-6 text-lg font-body leading-[1.7] text-base/80">
                             <p className="approach-content">
-                                We've been solving dealership insurance problems for 30 years. Now owned by Allstate and backed by a billion-dollar A-rated insurance company, we understand exactly what happens when insurance becomes a barrier to closing deals.
+                                We've been solving dealership insurance problems for 30 years. Policies are underwritten by Integon National, a billion-dollar A-rated carrier recently acquired by Allstate. We understand exactly what happens when insurance becomes a barrier to closing deals.
                             </p>
 
                             <p className="approach-content">
-                                Our approach is simple: instead of fighting with agents or waiting for callbacks, you issue state-approved coverage in two minutes through our mobile app. Your customer gets legitimate full coverage, your deal is protected, and your salesperson moves on to the next customer. No signup fees, no monthly minimums, no complicated dealer agreements.
+                                Our approach is simple: instead of fighting with agents or waiting for callbacks, managers can issue a state-approved binder in two minutes through our website. Your customer gets legitimate full coverage, your deal is protected, and your salesperson moves on to the next customer. A no-brainer tool which features no setup costs, no signup fees, no monthly minimums, and no complicated dealer agreements.
                             </p>
                         </div>
                     </div>
