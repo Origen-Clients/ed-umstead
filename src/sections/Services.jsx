@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShieldAlert, ShieldCheck, Building2 } from 'lucide-react';
@@ -11,7 +11,6 @@ const services = [
         overline: "EMERGENCY COVERAGE",
         title: "Deal Saver",
         subtitle: "For occasional insurance emergencies and difficult customers",
-        subtitleColor: "#cd7f32",
         description: "Get immediate state-approved coverage when traditional agents fail. Perfect for weekend deliveries, bad driving record customers, and emergency situations. Two-minute policy issuance through our website, no monthly minimum.",
         bestFor: "Dealerships handling 5-10 difficult insurance situations per month"
     },
@@ -20,17 +19,14 @@ const services = [
         overline: "FULL PROTECTION",
         title: "Revenue Accelerator",
         subtitle: "For high-volume stores that can't afford to lose deals",
-        subtitleColor: "#a8a9ad",
         description: "Complete insurance solution covering all scenarios that kill deals. Permissive-use policy covering the vehicle regardless of the driver. First-time buyers. Customers with an international or out-of-state license. Includes spot delivery protection and facilitation to lock in dealer profits immediately.",
         bestFor: "High-volume dealerships selling 200+ cars per month who understand that 10 extra deals on average will generate at least $23,000 in additional gross profits.",
-        featured: true
     },
     {
         icon: Building2,
         overline: "ENTERPRISE SOLUTION",
         title: "Dealer Group Mastery",
         subtitle: "For multi-location operations and dealer groups",
-        subtitleColor: "#d4af37",
         description: "Comprehensive coverage across multiple locations with dedicated support, custom implementation, and priority service. Includes training for all managers, quarterly account reviews, and direct access to our team for immediate support during high-volume periods.",
         bestFor: "Dealer groups with 10+ locations looking for a lifestyle-changing competitive advantage"
     }
@@ -38,6 +34,7 @@ const services = [
 
 export default function Services() {
     const sectionRef = useRef(null);
+    const [selectedCard, setSelectedCard] = useState(1);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -95,13 +92,16 @@ export default function Services() {
                 </div>
 
                 <div className="service-cards-container grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-                    {services.map((service, index) => (
+                    {services.map((service, index) => {
+                        const isSelected = selectedCard === index;
+                        return (
                         <div
                             key={index}
-                            className={`service-card flex flex-col rounded-card p-8 md:p-10 transition-transform duration-300 hover:-translate-y-2 border ${service.featured ? 'bg-surface/5 border-accent/30 shadow-[0_8px_30px_rgba(212,175,55,0.1)]' : 'bg-surface/5 border-white/10 hover:border-white/20 hover:bg-surface/10'}`}
+                            onClick={() => setSelectedCard(isSelected ? null : index)}
+                            className={`service-card flex flex-col rounded-card p-8 md:p-10 transition-all duration-300 hover:-translate-y-2 border cursor-pointer ${isSelected ? 'bg-surface/5 border-accent/30 shadow-[0_8px_30px_rgba(212,175,55,0.1)]' : 'bg-surface/5 border-white/10 hover:border-white/20 hover:bg-surface/10'}`}
                         >
                             <div className="flex items-center gap-4 mb-8">
-                                <div className={`p-3 rounded-lg ${service.featured ? 'bg-accent/20 text-accent' : 'bg-white/10 text-surface'}`}>
+                                <div className={`p-3 rounded-lg ${isSelected ? 'bg-accent/20 text-accent' : 'bg-white/10 text-surface'}`}>
                                     <service.icon size={24} />
                                 </div>
                                 <span className="font-mono text-xs tracking-wider uppercase opacity-70">
@@ -113,7 +113,7 @@ export default function Services() {
                                 {service.title}
                             </h3>
 
-                            <p className="text-base font-medium mb-6" style={{ color: service.subtitleColor }}>
+                            <p className="text-base font-medium mb-6" style={{ color: '#d4af37' }}>
                                 {service.subtitle}
                             </p>
 
@@ -121,14 +121,15 @@ export default function Services() {
                                 {service.description}
                             </p>
 
-                            <div className={`mt-auto pt-6 border-t ${service.featured ? 'border-accent/20' : 'border-white/10'}`}>
+                            <div className={`mt-auto pt-6 border-t ${isSelected ? 'border-accent/20' : 'border-white/10'}`}>
                                 <p className="text-sm">
                                     <span className="font-bold opacity-90 block mb-1">Best for:</span>
                                     <span className="text-surface/60">{service.bestFor}</span>
                                 </p>
                             </div>
                         </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 <div className="service-header text-center">
